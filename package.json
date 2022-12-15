@@ -1,0 +1,20 @@
+{
+  "name": "testjavan",
+  "version": "1.0.0",
+  "description": "test teknis",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaulanaHM/TestJavan.git"
+  },
+  "author": "MaulanaHM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaulanaHM/TestJavan/issues"
+  },
+  "homepage": "https://github.com/MaulanaHM/TestJavan#readme"
+}

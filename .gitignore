@@ -1,0 +1,8 @@
+.env
+.vscode/
+app/assets/upload
+app/assets
+node_modules/
+.idea/
+selfsigned.pem
+selfsigned.key
