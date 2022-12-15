@@ -2,11 +2,9 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import path from "path";
 
 // CONFIG ENVIRONMENT //
 dotenv.config();
-global.appRoot = path.resolve(__dirname);
 const app = express();
 const port = process.env.APP_PORT || 9001;
 
