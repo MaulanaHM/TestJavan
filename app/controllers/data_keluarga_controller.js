@@ -1,4 +1,4 @@
-import { buatDataKeluarga } from '../models/data_keluarga_model.js'
+import { buatDataKeluarga, ubahDataKeluarga, hapusDataKeluarga } from '../models/data_keluarga_model.js'
 
 /**
  * @param {object} req
@@ -33,8 +33,62 @@ import { buatDataKeluarga } from '../models/data_keluarga_model.js'
         });
     }
  }
+
+ const editKeluarga = async (req, res) => {
+    const dataUtama = req.body;
+
+    try {
+        const newDataKeluarga = await ubahDataKeluarga(dataUtama);
+        if (newDataKeluarga) {
+            return res.status(200).send({
+                status: 200,
+                message: "Berhasil mengubah data keluarga",
+                data: newDataKeluarga
+            })
+        } else {
+            return res.status(500).send({
+                status: 500,
+                error: 'Internal server error',
+            });
+        }
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send({
+            status: 500,
+            error: 'Internal server error',
+        });
+    }
+ }
+
+ const deleteKeluarga = async (req, res) => {
+    const idDataKeluarga = req.params.id;
+
+    try {
+        const newDataKeluarga = await hapusDataKeluarga(idDataKeluarga);
+        if (newDataKeluarga) {
+            return res.status(200).send({
+                status: 200,
+                message: "Berhasil menghapus data keluarga",
+                data: newDataKeluarga
+            })
+        } else {
+            return res.status(500).send({
+                status: 500,
+                error: 'Internal server error',
+            });
+        }
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send({
+            status: 500,
+            error: 'Internal server error',
+        });
+    }
+ }
  
  export {
    tambahKeluarga,
+   editKeluarga,
+   deleteKeluarga
  };
  
