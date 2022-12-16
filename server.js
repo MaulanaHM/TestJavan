@@ -39,9 +39,11 @@ app.use(cookieParser());
 const baseUrlWeb = "/api"; 
 import dataKeluargaRoute from "./app/routes/data_keluarga_route.js";
 import dataAsetRoute from "./app/routes/data_aset_route.js";
+import dataKepemilikanAsetRoute from "./app/routes/data_kepemilikan_aset_route.js";
 
 app.use(baseUrlWeb, dataKeluargaRoute);
 app.use(baseUrlWeb, dataAsetRoute);
+app.use(baseUrlWeb, dataKepemilikanAsetRoute);
 
 app.use((req, res, next) => {
   res.status(404).send({
