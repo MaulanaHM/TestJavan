@@ -1,5 +1,6 @@
 # TestJavan
 For Test Purpose
+Using NodeJS Express & Postgresql
 
 How To Start
 1. Buka DatabaseJavan.sql, jalankan setiap quer-nya, yaitu query schema, table, dan sequence
