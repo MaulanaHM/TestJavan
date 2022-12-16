@@ -26,35 +26,29 @@ const buatDataAset = async (data) => {
     }
 };
 
-// const ubahDataKeluarga = async (data) => {
-//     const queryText = `UPDATE ${table}
-//     SET
-//         nama_keluarga = $1,
-//         jenis_kelamin = $2,
-//         level = $3,
-//         id_parent = $4
-//     WHERE id_data_keluarga = $5 RETURNING *`;
-//     const values = [
-//         data.nama_keluarga,
-//         data.jenis_kelamin,
-//         data.level,
-//         data.id_parent,
-//         data.id_data_keluarga
-//     ]
-//     try {
-//         const { rows } = await connection.query(queryText, values);
-//         const dbResponse = rows;
+const ubahDataAset = async (data) => {
+    const queryText = `UPDATE ${table}
+    SET
+        nama_aset = $1
+    WHERE id_data_aset = $2 RETURNING *`;
+    const values = [
+        data.nama_aset,
+        data.id_data_aset
+    ]
+    try {
+        const { rows } = await connection.query(queryText, values);
+        const dbResponse = rows;
 
-//         if (dbResponse.length < 1) {
-//             return false
-//         } else {
-//             return dbResponse
-//         }
-//     } catch (error) {
-//         console.log(error)
-//         return false
-//     }
-// };
+        if (dbResponse.length < 1) {
+            return false
+        } else {
+            return dbResponse
+        }
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+};
 
 // const hapusDataKeluarga = async (id) => {
 //     const queryText = `DELETE FROM ${table} WHERE id_data_keluarga = ${id}`;
@@ -69,6 +63,6 @@ const buatDataAset = async (data) => {
 
 export {
     buatDataAset,
-    // ubahDataKeluarga,
+    ubahDataAset,
     // hapusDataKeluarga
 };

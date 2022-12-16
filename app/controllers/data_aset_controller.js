@@ -1,4 +1,4 @@
-import { buatDataAset } from '../models/data_aset_model.js'
+import { buatDataAset, ubahDataAset } from '../models/data_aset_model.js'
 
 /**
  * @param {object} req
@@ -32,31 +32,31 @@ import { buatDataAset } from '../models/data_aset_model.js'
     }
  }
 
-//  const editKeluarga = async (req, res) => {
-//     const dataUtama = req.body;
+ const editAset = async (req, res) => {
+    const dataUtama = req.body;
 
-//     try {
-//         const newDataKeluarga = await ubahDataKeluarga(dataUtama);
-//         if (newDataKeluarga) {
-//             return res.status(200).send({
-//                 status: 200,
-//                 message: "Berhasil mengubah data keluarga",
-//                 data: newDataKeluarga
-//             })
-//         } else {
-//             return res.status(500).send({
-//                 status: 500,
-//                 error: 'Internal server error',
-//             });
-//         }
-//     } catch (error) {
-//         console.log(error)
-//         return res.status(500).send({
-//             status: 500,
-//             error: 'Internal server error',
-//         });
-//     }
-//  }
+    try {
+        const newDataAset = await ubahDataAset(dataUtama);
+        if (newDataAset) {
+            return res.status(200).send({
+                status: 200,
+                message: "Berhasil mengubah data aset",
+                data: newDataAset
+            })
+        } else {
+            return res.status(500).send({
+                status: 500,
+                error: 'Internal server error',
+            });
+        }
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send({
+            status: 500,
+            error: 'Internal server error',
+        });
+    }
+ }
 
 //  const deleteKeluarga = async (req, res) => {
 //     const idDataKeluarga = req.params.id;
@@ -86,7 +86,7 @@ import { buatDataAset } from '../models/data_aset_model.js'
  
  export {
     tambahAset,
-//    editKeluarga,
+    editAset,
 //    deleteKeluarga
  };
  
