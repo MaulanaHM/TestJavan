@@ -1,4 +1,4 @@
-import { buatKepemilikanAset } from '../models/data_kepemilikan_model.js'
+import { buatKepemilikanAset, ubahDataKepemilikanAset } from '../models/data_kepemilikan_model.js'
 
 /**
  * @param {object} req
@@ -32,31 +32,31 @@ import { buatKepemilikanAset } from '../models/data_kepemilikan_model.js'
     }
  }
 
-//  const editAset = async (req, res) => {
-//     const dataUtama = req.body;
+ const editKepemilikanAset = async (req, res) => {
+    const dataUtama = req.body;
 
-//     try {
-//         const newDataAset = await ubahDataAset(dataUtama);
-//         if (newDataAset) {
-//             return res.status(200).send({
-//                 status: 200,
-//                 message: "Berhasil mengubah data aset",
-//                 data: newDataAset
-//             })
-//         } else {
-//             return res.status(500).send({
-//                 status: 500,
-//                 error: 'Internal server error',
-//             });
-//         }
-//     } catch (error) {
-//         console.log(error)
-//         return res.status(500).send({
-//             status: 500,
-//             error: 'Internal server error',
-//         });
-//     }
-//  }
+    try {
+        const newDataKepemilikanAset = await ubahDataKepemilikanAset(dataUtama);
+        if (newDataKepemilikanAset) {
+            return res.status(200).send({
+                status: 200,
+                message: "Berhasil mengubah kepemilikan aset",
+                data: newDataKepemilikanAset
+            })
+        } else {
+            return res.status(500).send({
+                status: 500,
+                error: 'Internal server error',
+            });
+        }
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send({
+            status: 500,
+            error: 'Internal server error',
+        });
+    }
+ }
 
 //  const deleteAset = async (req, res) => {
 //     const idDataAset = req.params.id;
@@ -86,7 +86,7 @@ import { buatKepemilikanAset } from '../models/data_kepemilikan_model.js'
  
  export {
     tambahKepemilikanAset,
-//     editAset,
+    editKepemilikanAset,
 //    deleteAset
  };
  
