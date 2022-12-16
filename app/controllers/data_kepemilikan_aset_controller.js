@@ -1,4 +1,6 @@
-import { buatKepemilikanAset, ubahDataKepemilikanAset, hapusDataKepemilikanAset } from '../models/data_kepemilikan_model.js'
+import { buatKepemilikanAset, ubahDataKepemilikanAset, hapusDataKepemilikanAset, getAllDataKepemilikanAset } from '../models/data_kepemilikan_model.js'
+import { hargaAset } from '../helper/dummy_aset.js';
+import qs from 'qs'
 
 /**
  * @param {object} req
@@ -83,10 +85,55 @@ import { buatKepemilikanAset, ubahDataKepemilikanAset, hapusDataKepemilikanAset 
         });
     }
  }
+
+ const getKepemilikanAset = async (req, res) => {
+
+    try {
+        const dataKepemilikanAset = await getAllDataKepemilikanAset()
+        if (dataKepemilikanAset) {
+
+            for (let d = 0; d < dataKepemilikanAset.length; d++) {
+                let namaAset = dataKepemilikanAset[d].nama_aset
+                let dataHargaAset
+                if (dataKepemilikanAset[d].nama_aset != null) {
+                    dataHargaAset = await hargaAset(namaAset)
+                    dataKepemilikanAset[d].aset = dataHargaAset
+                } else {
+                    dataKepemilikanAset[d].aset = 0
+                }
+            }
+
+            var result = [];
+            dataKepemilikanAset.reduce(function (res, value) {
+                if (!res[value.id_data_keluarga]) {
+                    res[value.id_data_keluarga] = { 
+                        id_data_keluarga: value.id_data_keluarga,
+                        nama_keluarga: value.nama_keluarga, 
+                        aset: 0 };
+                    result.push(res[value.id_data_keluarga])
+                }
+                res[value.id_data_keluarga].aset += value.aset;
+                return res;
+            }, {});
+
+            return res.status(200).send({
+                status: 200,
+                data: result
+            })
+        } else if (dataKepemilikanAset = 404) {
+
+        } else {
+
+        }
+    } catch {
+
+    }
+ }
  
  export {
     tambahKepemilikanAset,
     editKepemilikanAset,
-    deleteKepemilikanAset
+    deleteKepemilikanAset,
+    getKepemilikanAset
  };
  

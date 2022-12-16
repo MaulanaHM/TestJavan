@@ -20,15 +20,21 @@
   },
   "homepage": "https://github.com/MaulanaHM/TestJavan#readme",
   "dependencies": {
-    "babel-node": "0.0.1-security",
-    "body-parser": "^1.20.1",
-    "cookie-parser": "^1.4.6",
+    "axios": "^0.21.1",
+    "babel-node": "^0.0.1-security",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
+    "crypto-js": "^4.0.0",
+    "dotenv": "^8.2.0",
     "esm": "^3.2.25",
-    "express": "^4.18.2",
-    "multer": "^1.4.5-lts.1",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "node-fetch": "^2.6.7",
+    "node-html-parser": "^1.4.5",
     "path": "^0.12.7",
-    "pg": "^8.8.0"
+    "pg": "^8.0.2",
+    "pg-format": "^1.0.4",
+    "qs": "^6.11.0"
   }
 }

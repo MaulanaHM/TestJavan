@@ -69,8 +69,34 @@ const hapusDataKepemilikanAset = async (id) => {
     }
 };
 
+const getAllDataKepemilikanAset = async (data) => {
+    const queryText = `select 
+    dk.id_data_keluarga,
+    dk.nama_keluarga,
+    da.nama_aset
+    from "family".data_keluarga dk
+    left join "family".data_kepemilikan_aset dka on dk.id_data_keluarga = dka.id_data_keluarga 
+    left join "family".data_aset da on da.id_data_aset = dka.id_data_aset 
+    order by dk.id_data_keluarga asc`;
+
+    try {
+        const { rows } = await connection.query(queryText);
+        const dbResponse = rows;
+
+        if (dbResponse.length < 1) {
+            return 404
+        } else {
+            return dbResponse
+        }
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+};
+
 export {
     buatKepemilikanAset,
     ubahDataKepemilikanAset,
-    hapusDataKepemilikanAset
+    hapusDataKepemilikanAset,
+    getAllDataKepemilikanAset
 };
