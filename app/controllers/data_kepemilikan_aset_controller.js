@@ -1,4 +1,4 @@
-import { buatKepemilikanAset, ubahDataKepemilikanAset } from '../models/data_kepemilikan_model.js'
+import { buatKepemilikanAset, ubahDataKepemilikanAset, hapusDataKepemilikanAset } from '../models/data_kepemilikan_model.js'
 
 /**
  * @param {object} req
@@ -58,35 +58,35 @@ import { buatKepemilikanAset, ubahDataKepemilikanAset } from '../models/data_kep
     }
  }
 
-//  const deleteAset = async (req, res) => {
-//     const idDataAset = req.params.id;
+ const deleteKepemilikanAset = async (req, res) => {
+    const idDataAset = req.params.id;
 
-//     try {
-//         const newDataAset = await hapusDataAset(idDataAset);
-//         if (newDataAset) {
-//             return res.status(200).send({
-//                 status: 200,
-//                 message: "Berhasil menghapus data aset",
-//                 data: newDataAset
-//             })
-//         } else {
-//             return res.status(500).send({
-//                 status: 500,
-//                 error: 'Internal server error',
-//             });
-//         }
-//     } catch (error) {
-//         console.log(error)
-//         return res.status(500).send({
-//             status: 500,
-//             error: 'Internal server error',
-//         });
-//     }
-//  }
+    try {
+        const newDataKepemilikanAset = await hapusDataKepemilikanAset(idDataAset);
+        if (newDataKepemilikanAset) {
+            return res.status(200).send({
+                status: 200,
+                message: "Berhasil menghapus kepemilikan aset",
+                data: newDataKepemilikanAset
+            })
+        } else {
+            return res.status(500).send({
+                status: 500,
+                error: 'Internal server error',
+            });
+        }
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send({
+            status: 500,
+            error: 'Internal server error',
+        });
+    }
+ }
  
  export {
     tambahKepemilikanAset,
     editKepemilikanAset,
-//    deleteAset
+    deleteKepemilikanAset
  };
  

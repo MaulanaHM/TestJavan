@@ -58,19 +58,19 @@ const ubahDataKepemilikanAset = async (data) => {
     }
 };
 
-// const hapusDataAset = async (id) => {
-//     const queryText = `DELETE FROM ${table} WHERE id_data_aset = ${id}`;
-//     try {
-//         await connection.query(queryText);
-//         return true
-//     } catch (error) {
-//         console.log(error)
-//         return false
-//     }
-// };
+const hapusDataKepemilikanAset = async (id) => {
+    const queryText = `DELETE FROM ${table} WHERE id_data_kepemilikan_aset = ${id}`;
+    try {
+        await connection.query(queryText);
+        return true
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+};
 
 export {
     buatKepemilikanAset,
     ubahDataKepemilikanAset,
-    // hapusDataAset
+    hapusDataKepemilikanAset
 };
