@@ -50,19 +50,19 @@ const ubahDataAset = async (data) => {
     }
 };
 
-// const hapusDataKeluarga = async (id) => {
-//     const queryText = `DELETE FROM ${table} WHERE id_data_keluarga = ${id}`;
-//     try {
-//         await connection.query(queryText);
-//         return true
-//     } catch (error) {
-//         console.log(error)
-//         return false
-//     }
-// };
+const hapusDataAset = async (id) => {
+    const queryText = `DELETE FROM ${table} WHERE id_data_aset = ${id}`;
+    try {
+        await connection.query(queryText);
+        return true
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+};
 
 export {
     buatDataAset,
     ubahDataAset,
-    // hapusDataKeluarga
+    hapusDataAset
 };

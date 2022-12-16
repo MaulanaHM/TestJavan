@@ -1,4 +1,4 @@
-import { buatDataAset, ubahDataAset } from '../models/data_aset_model.js'
+import { buatDataAset, ubahDataAset, hapusDataAset } from '../models/data_aset_model.js'
 
 /**
  * @param {object} req
@@ -58,35 +58,35 @@ import { buatDataAset, ubahDataAset } from '../models/data_aset_model.js'
     }
  }
 
-//  const deleteKeluarga = async (req, res) => {
-//     const idDataKeluarga = req.params.id;
+ const deleteAset = async (req, res) => {
+    const idDataAset = req.params.id;
 
-//     try {
-//         const newDataKeluarga = await hapusDataKeluarga(idDataKeluarga);
-//         if (newDataKeluarga) {
-//             return res.status(200).send({
-//                 status: 200,
-//                 message: "Berhasil menghapus data keluarga",
-//                 data: newDataKeluarga
-//             })
-//         } else {
-//             return res.status(500).send({
-//                 status: 500,
-//                 error: 'Internal server error',
-//             });
-//         }
-//     } catch (error) {
-//         console.log(error)
-//         return res.status(500).send({
-//             status: 500,
-//             error: 'Internal server error',
-//         });
-//     }
-//  }
+    try {
+        const newDataAset = await hapusDataAset(idDataAset);
+        if (newDataAset) {
+            return res.status(200).send({
+                status: 200,
+                message: "Berhasil menghapus data aset",
+                data: newDataAset
+            })
+        } else {
+            return res.status(500).send({
+                status: 500,
+                error: 'Internal server error',
+            });
+        }
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send({
+            status: 500,
+            error: 'Internal server error',
+        });
+    }
+ }
  
  export {
     tambahAset,
     editAset,
-//    deleteKeluarga
+   deleteAset
  };
  
