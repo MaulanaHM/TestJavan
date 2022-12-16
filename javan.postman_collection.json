@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "dbbb87cc-82eb-445d-99e9-a7e28330941a",
+		"name": "javan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12877768"
+	},
+	"item": [
+		{
+			"name": "Edit Data Keluarga",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nama_keluarga",
+							"value": "Toni",
+							"type": "text"
+						},
+						{
+							"key": "jenis_kelamin",
+							"value": "L",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "id_parent",
+							"value": "18",
+							"type": "text"
+						},
+						{
+							"key": "id_data_keluarga",
+							"value": "25",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/edit-data-keluarga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"edit-data-keluarga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Data Keluarga",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nama_keluarga",
+							"value": "Toni",
+							"type": "text"
+						},
+						{
+							"key": "jenis_kelamin",
+							"value": "L",
+							"type": "text"
+						},
+						{
+							"key": "level",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "id_parent",
+							"value": "18",
+							"type": "text"
+						},
+						{
+							"key": "id_data_keluarga",
+							"value": "25",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/tambah-data-keluarga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"tambah-data-keluarga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hapus Data Keluarga",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/hapus-data-keluarga/25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"hapus-data-keluarga",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Data Aset",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nama_aset",
+							"value": "Samsung Universe 9 dan Samsung Galaxy Book",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/tambah-data-aset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"tambah-data-aset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Data Aset",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nama_aset",
+							"value": "Samsung Universe 9 dan Samsung Galaxy Book",
+							"type": "text"
+						},
+						{
+							"key": "id_data_aset",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/edit-data-aset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"edit-data-aset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hapus Data Aset",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/hapus-data-aset/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"hapus-data-aset",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Kepemilikan Aset",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_data_keluarga",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "id_data_aset",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "jumlah",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/tambah-kepemilikan-aset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"tambah-kepemilikan-aset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Kepemilikan Aset",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_data_keluarga",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "id_data_aset",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "jumlah",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_data_kepemilikan_aset",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3100/api/edit-kepemilikan-aset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"edit-kepemilikan-aset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Kepemilikan Aset",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3100/api/get-kepemilikan-aset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"api",
+						"get-kepemilikan-aset"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
